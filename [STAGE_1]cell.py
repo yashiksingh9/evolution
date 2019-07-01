@@ -1,4 +1,3 @@
-from threading import Thread
 import random
 import string
 import os
@@ -56,11 +55,11 @@ def growth_track():
 
     while True:
         current_time(c)
-        if age_hour == 24 and age_second == 0 and age_minute == 0:
-            age_day = age_day + 1
-        if age_minute == 59 and age_second == 59:
-            age_hour = age_hour + 1
-        if age_second == 59:
+        if age_hour    == 24 and age_second == 0 and age_minute == 0:
+            age_day    = age_day + 1
+        if age_minute  == 59 and age_second == 59:
+            age_hour   = age_hour + 1
+        if age_second  == 59:
             age_minute = age_minute + 1
         ts.sleep(1)
         age_second = age_second + 1
@@ -68,8 +67,8 @@ def growth_track():
             age_second = 1
         if age_minute == 60:
             age_minute = 0
-        if age_hour == 24:
-            age_hour = 0
+        if age_hour   == 24:
+            age_hour   = 0
         print(age_day, age_hour, age_minute, age_second)
         print(path)
         reproduce_compatibility_checker()
@@ -89,8 +88,8 @@ def reproduce(path):
     global n_1,n_2
     name_1 = name_gen()
     name_2 = name_gen()
-    n_1 = str("grass_"+name_1+".py")
-    n_2 = str("grass_"+name_2+".py")
+    n_1    = str("grass_"+name_1+".py")
+    n_2    = str("grass_"+name_2+".py")
     print(n_1)
     print(n_2)
     with open(n_1, "w+") as newfile, open(path) as program:
